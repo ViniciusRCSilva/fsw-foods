@@ -14,7 +14,7 @@ model Restaurant {
   deliveryFee         Decimal    @db.Decimal(10, 2)
   deliveryTimeMinutes Int
   categories          Category[] // Tabela Many to Many (Restaurant x Categories)
-  products            Products[] // Tabela Restaurant pode ter vários products
+  products            Product[] // Tabela Restaurant pode ter vários products
 }
 
 model Category {
@@ -22,10 +22,10 @@ model Category {
   name        String
   imageUrl    String
   restaurants Restaurant[] // Tabela Many to Many (Restaurant x Categories)
-  products    Products[] // Tabela Category pode ter vários products
+  products    Product[] // Tabela Category pode ter vários products
 }
 
-model Products {
+model Product {
   id                 String     @id @default(uuid())
   name               String
   description        String
