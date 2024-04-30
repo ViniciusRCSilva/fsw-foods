@@ -1,9 +1,11 @@
+import Header from "./_components/header";
+
 const Home = () => {
   return (
-    <div className="mx-6 bg-red-500 py-5">
-      <p>Hello World!</p>
+    <div className="">
+      <Header />
     </div>
   );
-}
+};
 
 export default Home;
