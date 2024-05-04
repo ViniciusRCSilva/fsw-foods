@@ -18,7 +18,7 @@ const RecommendedProducts = async () => {
       <div className="px-5 py-6">
         <h2 className="mb-6 text-lg font-semibold">Pedidos Recomendados</h2>
 
-        <div className="flex w-full flex-col gap-6">
+        <div className="grid grid-cols-2 gap-6">
           {products.map((product) => (
             <ProductItem
               key={product.id}
