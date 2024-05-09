@@ -29,6 +29,7 @@ import { CartContext } from "@/app/_context/cart";
 import { Prisma } from "@prisma/client";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useContext, useState } from "react";
 
 interface ProductDetailsProps {
@@ -99,9 +100,12 @@ const ProductDetails = ({
                 className="rounded-full object-cover"
               />
             </div>
-            <span className="text-xs text-muted-foreground">
+            <Link
+              href={`/restaurants/${product.restaurant.id}`}
+              className="text-xs text-muted-foreground hover:underline"
+            >
               {product.restaurant.name}
-            </span>
+            </Link>
           </div>
 
           <h1 className="mb-3 mt-1 text-xl font-semibold">{product.name}</h1>
