@@ -20,7 +20,12 @@ import {
   AlertDialogTitle,
 } from "./ui/alert-dialog";
 
-const Cart = () => {
+interface CartProps {
+  // eslint-disable-next-line no-unused-vars
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+const Cart = ({ setIsOpen }: CartProps) => {
   const [isSubmitLoading, setSubmitLoading] = useState(false);
   const [isConfirmDialogOpen, setIsConfirmDialogOpen] = useState(false);
   const [isCreateOrderConfirmed, setIsCreateOrderConfirmed] = useState(false);
