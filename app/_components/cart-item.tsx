@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CartContext, CartProduct } from "../_context/cart";
-import { calculateProductTotalPrice, formatCurrency } from "./_helpers/price";
+import { calculateProductTotalPrice, formatCurrency } from "../_helpers/price";
 import { Button } from "./ui/button";
 import { ChevronLeftIcon, ChevronRightIcon, TrashIcon } from "lucide-react";
 import { useContext } from "react";

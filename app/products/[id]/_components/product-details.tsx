@@ -3,7 +3,7 @@
 import {
   calculateProductTotalPrice,
   formatCurrency,
-} from "@/app/_components/_helpers/price";
+} from "@/app/_helpers/price";
 import Cart from "@/app/_components/cart";
 import DeliveryInfo from "@/app/_components/delivery-info";
 import DiscountBadge from "@/app/_components/discount-badge";

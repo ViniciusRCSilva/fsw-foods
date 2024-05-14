@@ -3,7 +3,7 @@
 import { CartContext } from "@/app/_context/cart";
 import { Restaurant } from "@prisma/client";
 import { useContext } from "react";
-import { formatCurrency } from "@/app/_components/_helpers/price";
+import { formatCurrency } from "@/app/_helpers/price";
 import { Button } from "@/app/_components/ui/button";
 import {
   Sheet,
