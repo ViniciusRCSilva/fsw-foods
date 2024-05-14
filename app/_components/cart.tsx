@@ -19,6 +19,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "./ui/alert-dialog";
+import { useToast } from "./ui/use-toast";
 
 interface CartProps {
   // eslint-disable-next-line no-unused-vars
@@ -26,6 +27,7 @@ interface CartProps {
 }
 
 const Cart = ({ setIsOpen }: CartProps) => {
+  const { toast } = useToast();
   const [isSubmitLoading, setSubmitLoading] = useState(false);
   const [isConfirmDialogOpen, setIsConfirmDialogOpen] = useState(false);
   const [isCreateOrderConfirmed, setIsCreateOrderConfirmed] = useState(false);
@@ -36,7 +38,12 @@ const Cart = ({ setIsOpen }: CartProps) => {
     useContext(CartContext);
 
   const handleFinishOrderClick = async () => {
-    if (!data?.user) return;
+    if (!data?.user) {
+      return toast({
+        title: "Erro ao finalizar pedido!",
+        description: "Você precisa realizar o login para finalizar o pedido!",
+      });
+    }
 
     const restaurant = products[0].restaurant;
 
