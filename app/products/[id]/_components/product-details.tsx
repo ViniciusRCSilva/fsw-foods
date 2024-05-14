@@ -50,7 +50,7 @@ const ProductDetails = ({
   complementaryProducts,
 }: ProductDetailsProps) => {
   const [quantity, setQuantity] = useState(1);
-  const [isCardOpen, setIsCardOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [isConfirmationDialogOpen, setIsConfirmationDialogOpen] =
     useState(false);
 
@@ -58,7 +58,7 @@ const ProductDetails = ({
 
   const addToCart = ({ emptyCart }: { emptyCart?: boolean }) => {
     addProductToCart({ product, quantity, emptyCart });
-    setIsCardOpen(true);
+    setIsCartOpen(true);
   };
 
   const handleAddToCartClick = () => {
@@ -172,12 +172,12 @@ const ProductDetails = ({
         </div>
       </div>
 
-      <Sheet open={isCardOpen} onOpenChange={setIsCardOpen}>
+      <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
         <SheetContent>
           <SheetHeader>
             <SheetTitle className="text-left">Sacola</SheetTitle>
           </SheetHeader>
-          <Cart />
+          <Cart setIsOpen={setIsCartOpen} />
         </SheetContent>
       </Sheet>
 
