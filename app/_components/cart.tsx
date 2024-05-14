@@ -42,6 +42,7 @@ const Cart = ({ setIsOpen }: CartProps) => {
       return toast({
         title: "Erro ao finalizar pedido!",
         description: "Você precisa realizar o login para finalizar o pedido!",
+        variant: "destructive",
       });
     }
 
