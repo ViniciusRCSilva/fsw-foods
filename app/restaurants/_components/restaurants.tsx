@@ -1,6 +1,6 @@
 "use client";
 
-import { Restaurant } from "@prisma/client";
+import { Restaurant, UserFavoritesRestaurant } from "@prisma/client";
 import { notFound, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { searchForRestaurants } from "../_actions/search";
@@ -10,7 +10,11 @@ import { Button } from "@/app/_components/ui/button";
 import Link from "next/link";
 import { ChevronLeftIcon } from "lucide-react";
 
-const Restaurants = () => {
+interface RestaurantProps {
+  userFavoriteRestaurants: UserFavoritesRestaurant[];
+}
+
+const Restaurants = ({ userFavoriteRestaurants }: RestaurantProps) => {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const searchParams = useSearchParams();
 
@@ -60,6 +64,7 @@ const Restaurants = () => {
                 key={restaurant.id}
                 restaurant={restaurant}
                 className="min-w-full max-w-full"
+                userFavoritesRestaurants={userFavoriteRestaurants}
               />
             ))}
           </div>
