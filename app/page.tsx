@@ -34,7 +34,7 @@ const Home = async () => {
     <>
       <Header />
 
-      <div className="px-5 pt-6 lg:flex lg:h-[32rem] lg:items-center lg:justify-evenly lg:overflow-y-hidden lg:bg-primary">
+      <div className="px-5 pt-6 lg:flex lg:h-[32rem] lg:items-center lg:justify-between lg:overflow-y-hidden lg:bg-primary lg:px-[15rem]">
         <div className="flex lg:w-[40rem] lg:flex-col lg:gap-6">
           <div className="hidden lg:flex lg:flex-col">
             <h1 className="text-[3rem] font-bold text-white">Está com fome?</h1>

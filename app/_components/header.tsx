@@ -19,7 +19,7 @@ import {
 
 const Header = () => {
   return (
-    <div className="sticky top-0 z-50 flex items-center justify-between bg-white p-5">
+    <div className="sticky top-0 z-50 flex items-center justify-between bg-white p-5 lg:px-[15rem]">
       <div className="relative h-[30px] w-[100px]">
         <Link href="/">
           <Image
