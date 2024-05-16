@@ -28,9 +28,9 @@ const MyOrdersPage = async () => {
 
   return (
     <>
-      <Header />
+      <Header searchSection />
 
-      <div className="px-5 py-6">
+      <div className="px-5 py-6 lg:px-[15rem]">
         <h2 className="mb-6 text-lg font-semibold">Meus Pedidos</h2>
 
         {orders.length == 0 ? (
