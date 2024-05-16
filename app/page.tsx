@@ -8,6 +8,7 @@ import { db } from "./_lib/prisma";
 import PromoBanner from "./_components/promo-banner";
 import RestaurantList from "./_components/restaurant-list";
 import Link from "next/link";
+import Image from "next/image";
 
 const Home = async () => {
   const products = await db.product.findMany({
@@ -30,11 +31,32 @@ const Home = async () => {
   });
 
   return (
-    <div className="">
+    <>
       <Header />
 
-      <div className="px-5 pt-6">
-        <Search />
+      <div className="px-5 pt-6 lg:flex lg:h-[32rem] lg:items-center lg:justify-evenly lg:overflow-y-hidden lg:bg-primary">
+        <div className="flex lg:w-[40rem] lg:flex-col lg:gap-6">
+          <div className="hidden lg:flex lg:flex-col">
+            <h1 className="text-[3rem] font-bold text-white">Está com fome?</h1>
+            <span className="block text-lg text-white">
+              Com apenas alguns cliques, encontre refeições acessíveis perto de
+              você.
+            </span>
+          </div>
+
+          <div className="w-full lg:rounded-lg lg:bg-white lg:p-5">
+            <Search />
+          </div>
+        </div>
+
+        <div className="top-24 hidden lg:relative lg:flex lg:h-96 lg:w-96">
+          <Image
+            src="/food_hero_section.png"
+            alt="Imagem de comida no Hero Section"
+            fill
+            className="rounded-full object-fill shadow-2xl"
+          />
+        </div>
       </div>
 
       <div className="px-5 pt-6">
@@ -90,7 +112,7 @@ const Home = async () => {
 
         <RestaurantList />
       </div>
-    </div>
+    </>
   );
 };
 
