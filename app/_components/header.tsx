@@ -16,10 +16,15 @@ import {
   LoggedUserOptions,
   SignOutSection,
 } from "./_header/_helpers/auth";
+import Search from "./search";
 
-const Header = () => {
+interface HeaderProps {
+  searchSection?: boolean;
+}
+
+const Header = ({ searchSection }: HeaderProps) => {
   return (
-    <div className="sticky top-0 z-50 flex items-center justify-between bg-white p-5 lg:px-[15rem]">
+    <div className="sticky top-0 z-50 flex items-center justify-between bg-white p-5 shadow-md lg:px-[15rem]">
       <div className="relative h-[30px] w-[100px]">
         <Link href="/">
           <Image
@@ -30,6 +35,12 @@ const Header = () => {
           />
         </Link>
       </div>
+
+      {searchSection && (
+        <div className="w-[38rem]">
+          <Search />
+        </div>
+      )}
 
       <Sheet>
         <SheetTrigger>
