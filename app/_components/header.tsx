@@ -41,7 +41,7 @@ const Header = () => {
             <MenuIcon />
           </Button>
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent className="overflow-y-auto [&::-webkit-scrollbar]:hidden">
           <SheetHeader>
             <SheetTitle className="text-left">Menu</SheetTitle>
           </SheetHeader>
