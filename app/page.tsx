@@ -63,14 +63,14 @@ const Home = async () => {
         <CategoryList />
       </div>
 
-      <div className="px-5 pt-6">
+      <div className="flex px-5 pt-6 lg:hidden">
         <PromoBanner
           src="/promo-banner-01.png"
           alt="Até 30% de Desconto em Pizzas"
         />
       </div>
 
-      <div className="space-y-4 pt-6">
+      <div className="space-y-4 pt-6 lg:px-[15rem]">
         <div className="flex items-center justify-between px-5">
           <h2 className="font-semibold">Pedidos Recomendados</h2>
           <Button
@@ -88,14 +88,23 @@ const Home = async () => {
         <ProductList products={products} />
       </div>
 
-      <div className="px-5 pt-6">
-        <PromoBanner
-          src="/promo-banner-02.png"
-          alt="A partir de R$17,90 em Lanches"
-        />
+      <div className="px-5 pt-6 lg:flex lg:items-center lg:gap-6 lg:px-[15rem]">
+        <div className="hidden lg:flex">
+          <PromoBanner
+            src="/promo-banner-01.png"
+            alt="Até 30% de Desconto em Pizzas"
+          />
+        </div>
+
+        <div>
+          <PromoBanner
+            src="/promo-banner-02.png"
+            alt="A partir de R$17,90 em Lanches"
+          />
+        </div>
       </div>
 
-      <div className="space-y-4 py-6">
+      <div className="space-y-4 py-6 lg:px-[15rem]">
         <div className="flex items-center justify-between px-5">
           <h2 className="font-semibold">Restaurantes Recomendados</h2>
           <Button
