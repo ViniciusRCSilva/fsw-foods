@@ -37,7 +37,7 @@ const Header = ({ searchSection }: HeaderProps) => {
       </div>
 
       {searchSection && (
-        <div className="w-[38rem]">
+        <div className="hidden w-[38rem] lg:block">
           <Search />
         </div>
       )}
