@@ -89,7 +89,7 @@ const ProductDetails = ({
 
   return (
     <>
-      <div className="relative z-50 mt-[-1.5rem] rounded-t-3xl bg-white py-5">
+      <div className="relative z-50 mt-[-1.5rem] rounded-t-3xl bg-white py-5 lg:z-40 lg:m-0 lg:rounded-none">
         <div className="px-5">
           <div className="flex items-center gap-[0.375rem]">
             <div className="relative h-6 w-6">
@@ -156,11 +156,14 @@ const ProductDetails = ({
             </p>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 block lg:hidden">
             <h3 className="font-semibold">Peça também</h3>
           </div>
         </div>
-        <ProductList products={complementaryProducts} />
+
+        <div className="block lg:hidden">
+          <ProductList products={complementaryProducts} />
+        </div>
 
         <div className="px-5 pt-5">
           <Button
