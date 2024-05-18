@@ -10,6 +10,7 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
+  SheetTrigger,
 } from "@/app/_components/ui/sheet";
 import Cart from "@/app/_components/cart";
 
@@ -28,7 +29,7 @@ const CartBanner = ({ restaurant }: CartBannerProps) => {
   if (!restaurantHasProductsOnCart) return null;
 
   return (
-    <div className="sticky bottom-0 left-0 z-50 w-full rotate-180 bg-white p-5 pb-3 shadow-lg">
+    <div className="sticky bottom-0 left-0 z-50 w-full rotate-180 bg-white p-5 pb-3 shadow-lg lg:px-[15rem]">
       <div className="flex rotate-180 items-center justify-between">
         <div>
           <span className="text-xs text-muted-foreground">
@@ -43,8 +44,10 @@ const CartBanner = ({ restaurant }: CartBannerProps) => {
           </h3>
         </div>
 
-        <Button>Ver sacola</Button>
-        <Sheet open>
+        <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
+          <SheetTrigger asChild>
+            <Button>Ver sacola</Button>
+          </SheetTrigger>
           <SheetContent>
             <SheetHeader>
               <SheetTitle className="text-left">Sacola</SheetTitle>
