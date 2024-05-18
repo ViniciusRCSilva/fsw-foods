@@ -30,7 +30,7 @@ const MyOrdersPage = async () => {
     <>
       <Header searchSection />
 
-      <div className="px-5 py-6 lg:px-[15rem]">
+      <div className="px-5 py-6 lg:px-[15rem] lg:pt-10">
         <h2 className="mb-6 text-lg font-semibold">Meus Pedidos</h2>
 
         {orders.length == 0 ? (
