@@ -36,9 +36,13 @@ const Restaurants = ({ userFavoriteRestaurants }: RestaurantProps) => {
 
   return (
     <>
-      <Header />
-      <div className="px-5 py-6">
-        <h2 className="mb-6 text-lg font-semibold">Restaurantes Encontrados</h2>
+      <Header searchSection />
+      <div className="px-5 py-6 lg:px-[15rem] lg:pt-10">
+        <h2 className="mb-6 flex gap-1 text-lg font-semibold">
+          Restaurantes
+          <span className="hidden lg:block">para &quot;{searchFor}&quot;</span>
+          <span className="block lg:hidden">Encontrados</span>
+        </h2>
 
         {restaurants.length == 0 ? (
           <div className="flex flex-col items-center justify-center gap-4">
@@ -58,7 +62,7 @@ const Restaurants = ({ userFavoriteRestaurants }: RestaurantProps) => {
             </Button>
           </div>
         ) : (
-          <div className="flex w-full flex-col gap-6">
+          <div className="flex w-full flex-col gap-6 lg:grid lg:grid-cols-3">
             {restaurants.map((restaurant) => (
               <RestaurantItem
                 key={restaurant.id}
